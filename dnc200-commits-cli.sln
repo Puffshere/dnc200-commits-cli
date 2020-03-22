@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dnc200-commits-cli", "src\dnc200-commits-cli\dnc200-commits-cli.csproj", "{1C590A78-D036-48DD-BBAD-1524C2FB5E36}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dnc200-commits-cliTest", "test\dnc200-commits-cliTest\dnc200-commits-cliTest.csproj", "{4A1B0B94-A62A-4426-A116-14F4ABAF0F78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C590A78-D036-48DD-BBAD-1524C2FB5E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C590A78-D036-48DD-BBAD-1524C2FB5E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C590A78-D036-48DD-BBAD-1524C2FB5E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C590A78-D036-48DD-BBAD-1524C2FB5E36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A1B0B94-A62A-4426-A116-14F4ABAF0F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A1B0B94-A62A-4426-A116-14F4ABAF0F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A1B0B94-A62A-4426-A116-14F4ABAF0F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A1B0B94-A62A-4426-A116-14F4ABAF0F78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {984B95F7-AE79-4905-BC00-8D69AC290DA1}
+	EndGlobalSection
+EndGlobal
