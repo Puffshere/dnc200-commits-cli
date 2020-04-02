@@ -41,7 +41,25 @@ namespace dnc200_commits_cli
             }
         }
 
+        public static int GetCommits(string userName)
+        {
+            int x = 0;
+            bool isInt = int.TryParse(userName, out x);
+            if (isInt)
+            {
+                return x;
+            }
+            if (!isInt)
+            {
+                return 0;
+            }
+            return 0;
+        }
+
         // Makes a reqest to the Github api and extracts the amount of commits made
+
+
+
         public static string GetCommits(string user, string data)
         {
             List<dynamic> response = JsonConvert.DeserializeObject<List<dynamic>>(data);

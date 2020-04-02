@@ -15,14 +15,14 @@ namespace dnc200_commits_cliTest
             Assert.Equal(expectedCommits, actualCommits);
         }
 
-        [Fact]
-        public void GetCommits_Repo()
-        {
-            string repoName = "";
-            string userName = "";
-            int expectedCommits = 0;
-            int actualCommits = Program.GetCommits(userName, repoName);
-            Assert.Equal(expectedCommits, actualCommits);
-        }
+        //[Fact]
+        //public void GetCommits_Repo()
+        //{
+        //    string repoName = "";
+        //    string userName = "";
+        //    int expectedCommits = 0;
+        //    int actualCommits = Program.GetCommits(userName, repoName);
+        //    Assert.Equal(expectedCommits, actualCommits);
+        //}
     }
 }
