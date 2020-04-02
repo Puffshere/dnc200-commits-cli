@@ -24,10 +24,16 @@ namespace dnc200_commits_cli
                 case "repo":
                     Console.Write("The repository's name is: ");
                     repositoryName = Console.ReadLine();
+                    int y = 0;
+                    bool x = int.TryParse(repositoryName, out y);
+                    if (x)
+                    {
+                        Console.WriteLine("please enter valid name");
+                    }
                     Console.Write("The repository's owner is: ");
                     userName = Console.ReadLine();
                     uri += $"repos/{userName}/{repositoryName}/stats/commit_activity";
-                    Console.WriteLine(GetCommits(userName, repositoryName, GetFromURI(uri)));
+                    Console.WriteLine(GetCommits(userName, GetFromURI(uri)));
                     break;
                 case "user":
                     Console.Write("The user's name is: ");
@@ -40,6 +46,7 @@ namespace dnc200_commits_cli
                     break;
             }
         }
+
 
         public static int GetCommits(string userName)
         {
@@ -56,12 +63,10 @@ namespace dnc200_commits_cli
             return 0;
         }
 
-        // Makes a reqest to the Github api and extracts the amount of commits made
-
-
-
         public static string GetCommits(string user, string data)
         {
+            int x = 0;
+            bool isData = int.TryParse(data, out x);
             List<dynamic> response = JsonConvert.DeserializeObject<List<dynamic>>(data);
             IEnumerable<dynamic> pushes = response.Where(e => e.type == "PushEvent");
             int commitCount = pushes.Aggregate(0, (total, push) => total + push.payload.commits.Count);
@@ -77,7 +82,7 @@ namespace dnc200_commits_cli
 
         public static string GetFromURI(string uri)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+            HttpWebRequest request = (HttpWebRequest)NewMethod(uri);
             request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
             request.Headers.Add("User-Agent", "request");
 
@@ -87,6 +92,11 @@ namespace dnc200_commits_cli
             {
                 return reader.ReadToEnd();
             }
+        }
+
+        private static WebRequest NewMethod(string uri)
+        {
+            return WebRequest.Create(uri);
         }
     }
 }
